@@ -30,9 +30,11 @@ setup(
         'django_prices_vatlayer', 'django_prices_vatlayer.migrations',
         'django_prices_vatlayer.management',
         'django_prices_vatlayer.management.commands'],
+    package_data={'django_prices_vatlayer': ['management/commands/*.json']},
     include_package_data=True,
     classifiers=CLASSIFIERS,
     install_requires=[
         'Django>=1.11', 'prices>=1.0.0', 'requests', 'jsonfield'],
     platforms=['any'],
-    zip_safe=False)
+    zip_safe=False),
+
