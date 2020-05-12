@@ -1,7 +1,4 @@
-import json
-import os
-
-from django.core.management.base import BaseCommand
+from django.core.management.base import BaseCommand, CommandParser
 
 from ... import utils
 
@@ -9,17 +6,17 @@ from ... import utils
 class Command(BaseCommand):
     help = 'Get current vat rates in european country and saves to database'
 
+    def add_arguments(self, parser):
+        parser.add_argument(
+            "--access_key",
+            type=str,
+            default=None,
+            help=(
+               "Provide access_key, required by Vatlayer API. If missing, it will try "
+               "to use access_key defined in settings file"
+            )
+        )
+
     def handle(self, *args, **options):
-        commands_dir = os.path.dirname(__file__)
-        rates_list_path = os.path.join(commands_dir, "rates_list.json")
-        types_path = os.path.join(commands_dir, "types.json")
-
-        with open(rates_list_path, "r") as read_file:
-            json_response_rates = json.load(read_file)
-
-        utils.create_objects_from_json(json_response_rates)
-
-        with open(types_path, "r") as read_file:
-            json_response_types = json.load(read_file)
-
-        utils.save_vat_rate_types(json_response_types)
+        access_key = options.get("access_key") or utils.get_access_key_from_settings()
+        utils.fetch_rates(access_key=access_key)

@@ -1,17 +1,14 @@
 from decimal import Decimal
 
-import requests
+import os
+import json
+
 from django.conf import settings
 from django.core.cache import cache
 from django.core.exceptions import ImproperlyConfigured, ObjectDoesNotExist
 from prices import flat_tax
 
 from .models import VAT, RateTypes, DEFAULT_TYPES_INSTANCE_ID
-
-try:
-    ACCESS_KEY = settings.VATLAYER_ACCESS_KEY
-except AttributeError:
-    raise ImproperlyConfigured('VATLAYER_ACCESS_KEY is required')
 
 USE_HTTPS = getattr(settings, 'VATLAYER_USE_HTTPS', False)
 
@@ -34,18 +31,42 @@ def validate_data(json_data):
         raise ImproperlyConfigured(info)
 
 
-def fetch_from_api(url):
+def get_access_key_from_settings():
+    try:
+        key = settings.VATLAYER_ACCESS_KEY
+    except AttributeError:
+        return None
+    return key
+
+
+def fetch_from_api(url, access_key=None):
+    access_key = access_key or get_access_key_from_settings()
+    if not access_key:
+        raise ImproperlyConfigured(
+            "Missing vatlayer acces_key. Provide settings.VATLAYER_ACCESS_KEY or "
+            "pass access_key in params argument"
+        )
     url = VATLAYER_API + url
-    response = requests.get(url, params={'access_key': ACCESS_KEY})
-    return response.json()
+    curr_dir = os.path.dirname(__file__)
+    response = None
+    if "rate_list" in url:
+        rates_list_path = os.path.join(curr_dir, "rates_list.json")
+        with open(rates_list_path, "r") as read_file:
+            response = json.load(read_file)
+
+    elif "types" in url:
+        types_path = os.path.join(curr_dir, "types.json")
+        with open(types_path, "r") as read_file:
+            response = json.load(read_file)
+    return response
 
 
-def fetch_rate_types():
-    return fetch_from_api(TYPES_URL)
+def fetch_rate_types(access_key=None):
+    return fetch_from_api(TYPES_URL, access_key)
 
 
-def fetch_vat_rates():
-    return fetch_from_api(RATES_URL)
+def fetch_vat_rates(access_key=None):
+    return fetch_from_api(RATES_URL, access_key)
 
 
 def save_vat_rate_types(json_data):
@@ -114,3 +135,11 @@ def get_tax_for_rate(tax_rates, rate_name=None):
 def get_tax_rate_types():
     rate_types = RateTypes.objects.singleton()
     return rate_types.types if rate_types else []
+
+
+def fetch_rates(access_key=None):
+    json_response_rates = fetch_vat_rates(access_key=access_key)
+    create_objects_from_json(json_response_rates)
+
+    json_response_types = fetch_rate_types(access_key=access_key)
+    save_vat_rate_types(json_response_types)
