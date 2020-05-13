@@ -30,7 +30,7 @@ setup(
         'django_prices_vatlayer', 'django_prices_vatlayer.migrations',
         'django_prices_vatlayer.management',
         'django_prices_vatlayer.management.commands'],
-    package_data={'django_prices_vatlayer': ['/*.json', '*.json']},
+    package_data={'django_prices_vatlayer': ['management/commands/*.json']},
     include_package_data=True,
     classifiers=CLASSIFIERS,
     install_requires=[
