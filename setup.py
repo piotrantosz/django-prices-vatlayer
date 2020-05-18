@@ -24,17 +24,16 @@ setup(
     author_email='hello@mirumee.com',
     description='vatlayer.com support for django',
     license='BSD',
-    version='1.0.3',
+    version='1.1.1',
     url='https://github.com/mirumee/django-prices-vatlayer',
     packages=[
         'django_prices_vatlayer', 'django_prices_vatlayer.migrations',
         'django_prices_vatlayer.management',
         'django_prices_vatlayer.management.commands'],
-    package_data={'django_prices_vatlayer': ['management/commands/*.json']},
+    package_data={'django_prices_vatlayer': ['*.json', '/*.json']},
     include_package_data=True,
     classifiers=CLASSIFIERS,
     install_requires=[
         'Django>=1.11', 'prices>=1.0.0', 'requests', 'jsonfield'],
     platforms=['any'],
-    zip_safe=False),
-
+    zip_safe=False)
