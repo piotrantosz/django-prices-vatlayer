@@ -3,7 +3,7 @@
    "rates":{
       "AT":{
          "country_name":"Austria",
-         "standard_rate":20,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -13,7 +13,7 @@
       },
       "BE":{
          "country_name":"Belgium",
-         "standard_rate":21,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -23,7 +23,7 @@
       },
       "BG":{
          "country_name":"Bulgaria",
-         "standard_rate":20,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -33,7 +33,7 @@
       },
       "HR":{
          "country_name":"Croatia",
-         "standard_rate":25,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -43,7 +43,7 @@
       },
       "CY":{
          "country_name":"Cyprus",
-         "standard_rate":19,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -53,7 +53,7 @@
       },
       "CZ":{
          "country_name":"Czech Republic",
-         "standard_rate":21,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -63,7 +63,7 @@
       },
       "DK":{
          "country_name":"Denmark",
-         "standard_rate":25,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -73,7 +73,7 @@
       },
       "EE":{
          "country_name":"Estonia",
-         "standard_rate":20,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -83,7 +83,7 @@
       },
       "FI":{
          "country_name":"Finland",
-         "standard_rate":24,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -93,7 +93,7 @@
       },
       "FR":{
          "country_name":"France",
-         "standard_rate":20,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -103,7 +103,7 @@
       },
       "DE":{
          "country_name":"Germany",
-         "standard_rate":19,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -113,7 +113,7 @@
       },
       "GR":{
          "country_name":"Greece",
-         "standard_rate":24,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -123,7 +123,7 @@
       },
       "HU":{
          "country_name":"Hungary",
-         "standard_rate":27,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -143,7 +143,7 @@
       },
       "IT":{
          "country_name":"Italy",
-         "standard_rate":22,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -153,7 +153,7 @@
       },
       "LV":{
          "country_name":"Latvia",
-         "standard_rate":21,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -163,7 +163,7 @@
       },
       "LT":{
          "country_name":"Lithuania",
-         "standard_rate":21,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -173,7 +173,7 @@
       },
       "LU":{
          "country_name":"Luxembourg",
-         "standard_rate":17,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -183,7 +183,7 @@
       },
       "MT":{
          "country_name":"Malta",
-         "standard_rate":18,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -193,7 +193,7 @@
       },
       "NL":{
          "country_name":"Netherlands",
-         "standard_rate":21,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -223,7 +223,7 @@
       },
       "RO":{
          "country_name":"Romania",
-         "standard_rate":19,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -233,7 +233,7 @@
       },
       "SK":{
          "country_name":"Slovakia",
-         "standard_rate":20,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -243,7 +243,7 @@
       },
       "SI":{
          "country_name":"Slovenia",
-         "standard_rate":22,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -253,7 +253,7 @@
       },
       "ES":{
          "country_name":"Spain",
-         "standard_rate":21,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -263,7 +263,7 @@
       },
       "SE":{
          "country_name":"Sweden",
-         "standard_rate":25,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
@@ -273,7 +273,7 @@
       },
       "GB":{
          "country_name":"United Kingdom",
-         "standard_rate":20,
+         "standard_rate":23,
          "reduced_rates":{
             "VAT0":0,
             "VAT5":5,
